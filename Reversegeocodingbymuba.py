@@ -8,7 +8,7 @@ def reverse_geocode(latitude, longitude):
     try:
         location = geolocator.reverse((latitude, longitude), exactly_one=True)
         return location.address if location else "N/A"
-    except geopy.exc.GeocoderUnavailable as e:
+    except geopy.exc.GeocoderUnavailable as :
         print("GeocoderUnavailable - Retrying after 5 seconds...")
         time.sleep(5)
         return reverse_geocode(latitude, longitude)
