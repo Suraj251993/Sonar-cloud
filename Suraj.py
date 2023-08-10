@@ -9,7 +9,7 @@ def reverse_geocode(latitude, longitude):
 def reverse_geocode_bulk(input_file, output_file):
     with open(input_file, 'r') as infile, open(output_file, 'w', newline='') as outfile:
         reader = csv.DictReader(infile)
-        fieldnames = reader.fieldnames + ['Address']
+        fieldnames = reader.fieldnames  ['Address']
         writer = csv.DictWriter(outfile, fieldnames=fieldnames)
         writer.writeheader()
 
